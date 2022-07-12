@@ -2,12 +2,15 @@ require('dotenv').config();
 const SequelizeAuto = require('sequelize-auto');
 
 const auto = new SequelizeAuto(
-  process.env.PG_DATABASE,
-  process.env.PG_USER,
-  process.env.PG_PASSWORD, {
-  host: process.env.PG_HOST,
-  dialect: 'postgres',
-}
+  process.env.POSTGRES_DATABASE,
+  process.env.POSTGRES_USER,
+  process.env.POSTGRES_PASSWORD,
+  {
+    host: process.env.POSTGRES_HOST,
+    dialect: 'postgres',
+    caseModel: 'c',   // camelCase
+    caseFile: 'c',    // camelC
+  }
 );
 
 auto.run().then(data => {

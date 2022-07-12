@@ -1,6 +1,5 @@
-const Sequelize = require('sequelize');
 module.exports = function (sequelize, DataTypes) {
-  return sequelize.define('rss_feed_items', {
+  return sequelize.define('RssFeedItem', {
     id: {
       autoIncrement: true,
       type: DataTypes.BIGINT,
@@ -15,9 +14,10 @@ module.exports = function (sequelize, DataTypes) {
       type: DataTypes.STRING,
       allowNull: false
     },
-    pub_date: {
+    pubDate: {
       type: DataTypes.DATE,
-      allowNull: true
+      allowNull: true,
+      field: 'pub_date',
     },
     description: {
       type: DataTypes.STRING,
